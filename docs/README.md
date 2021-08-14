@@ -1,6 +1,7 @@
 # 環境構築
 
-Makefileの`PACKAGEDIR`を適切な場所に変更する。
+1. Makefileの`PACKAGEDIR`を適切な場所に変更する。
+2. conf.pyの`project`, `copyright`, `author`を適切な値に変更する。
 
 `make init`コマンドを実行する。
 
