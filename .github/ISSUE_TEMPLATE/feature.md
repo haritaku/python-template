@@ -1,7 +1,7 @@
 ---
 name: 機能要望
 about: 欲しい機能に関して記述
-title: "[EN]"
+title: "[EN] Title"
 labels: enhancement
 assignees: ''
 
