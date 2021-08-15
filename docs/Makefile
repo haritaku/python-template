@@ -20,18 +20,8 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-# initialize docs
-.PHONY: init
-init:
-	sphinx-apidoc -F -e -o $(SOURCEDIR) $(PACKAGEDIR)
-
 # live html
 .PHONY: live
 live:
 	make clean
 	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)/html
-
-# update package's documents
-.PHONY: m_up
-m_up:
-	sphinx-apidoc -f -e -o $(SOURCEDIR) $(PACKAGEDIR)
