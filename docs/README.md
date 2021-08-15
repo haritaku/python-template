@@ -4,9 +4,10 @@
 2. conf.pyの`project`, `copyright`, `author`を適切な値に変更する。
 
 ## コマンド
-
 基本的には以下のコマンド群を利用する。
 
-| command     | description                            |
-| ----------- | -------------------------------------- |
-| `make live` | リアルタイムでhtmlを作成するコマンド。 |
+| command      | description                            |
+| ------------ | -------------------------------------- |
+| `make html`  | _build以下にhtmlファイルを作成。       |
+| `make clean` | _build内のhtmlファイルを削除           |
+| `make live`  | リアルタイムでhtmlを作成するコマンド。 |
