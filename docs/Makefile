@@ -24,4 +24,5 @@ help:
 .PHONY: live
 live:
 	make clean
+	rm -rf $(SOURCEDIR)/_autosummary/
 	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)/html
