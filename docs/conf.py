@@ -18,6 +18,7 @@ extensions = [
     "sphinxcontrib.katex",  # https://sphinxcontrib-katex.readthedocs.io/en/latest/
     "nbsphinx",  # https://nbsphinx.readthedocs.io/en/latest/
     "myst_parser",  # https://myst-parser.readthedocs.io/en/latest/index.html
+]
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
@@ -43,6 +44,14 @@ autodoc_member_order = "bysource"
 
 # autosummary config
 autosummary_generate = True
+
+# MyST config
+myst_enable_extensions = [
+    "deflist",  # 定義リストの作成を可能にする
+    "dollarmath",  # `$`での数式記述を可能にする
+    "html_image",  # html形式でのimageの記述を可能にする
+    "tasklist",  # `- [ ]`の記述を可能にする
+]
 
 add_module_names = False
 templates_path = ["_templates"]
