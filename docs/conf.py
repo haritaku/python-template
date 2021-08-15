@@ -16,7 +16,9 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.coverage",
     "sphinx.ext.autosummary",
+    "sphinx.ext.mathjax",
     "sphinxcontrib.katex",
+    "nbsphinx",
 ]
 
 intersphinx_mapping = {
@@ -35,6 +37,7 @@ todo_include_todos = True
 napoleon_numpy_docstring = False
 napoleon_use_ivar = True
 napoleon_use_admonition_for_notes = True
+napoleon_custom_sections = [("Returns", "params_style")]
 
 # type hints config
 autodoc_typehints = "description"
@@ -53,8 +56,7 @@ add_module_names = False
 templates_path = ["_templates"]
 language = "en"
 
-exclude_patterns = ["README.md"]
-
+exclude_patterns = ["README.md", "**.ipynb_checkpoints"]
 
 # -- Options for HTML output -------------------------------------------------
 
