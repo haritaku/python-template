@@ -3,7 +3,7 @@ name: バグレポート
 about: バグの修正要望
 title: "[BUG] Title"
 labels: bug
-assignees: ''
+assignees: 'haritaku'
 
 ---
 

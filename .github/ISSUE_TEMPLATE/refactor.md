@@ -3,7 +3,7 @@ name: リファクタリング
 about: リファクタリング案
 title: "[REF] Title"
 labels: refactor
-assignees: ''
+assignees: 'haritaku'
 
 ---
 
