@@ -16,6 +16,7 @@ sphinxcontrib-katex = "^0.8.6"
 PyYAML = "^5.4.1"
 jupyter-sphinx = "^0.3.2"
 nbsphinx = "^0.8.7"
+myst-parser = "^0.15.1"
 
 [tool.poetry.dev-dependencies]
 jupyterlab = "^3.0.16"
