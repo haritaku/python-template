@@ -6,17 +6,15 @@ author = "haritaku"
 
 
 # -- General configuration ---------------------------------------------------
-
+# Built-in extensions: https://www.sphinx-doc.org/ja/master/usage/extensions/index.html
 extensions = [
-    "recommonmark",
-    "sphinx.ext.autodoc",
-    "sphinx.ext.intersphinx",
-    "sphinx.ext.napoleon",
-    "sphinx.ext.todo",
-    "sphinx.ext.viewcode",
-    "sphinx.ext.coverage",
-    "sphinx.ext.autosummary",
-    "sphinx.ext.mathjax",
+    "sphinx.ext.autodoc",  # https://www.sphinx-doc.org/ja/master/usage/extensions/autodoc.html
+    "sphinx.ext.intersphinx",  # https://www.sphinx-doc.org/ja/master/usage/extensions/intersphinx.html
+    "sphinx.ext.napoleon",  # https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html
+    "sphinx.ext.todo",  # https://www.sphinx-doc.org/ja/master/usage/extensions/todo.html
+    "sphinx.ext.viewcode",  # https://www.sphinx-doc.org/ja/master/usage/extensions/viewcode.html
+    "sphinx.ext.autosummary",  # https://www.sphinx-doc.org/ja/master/usage/extensions/autosummary.html
+    "sphinx.ext.mathjax",  # https://www.sphinx-doc.org/ja/master/usage/extensions/math.html#module-sphinx.ext.mathjax
     "sphinxcontrib.katex",
     "nbsphinx",
 ]
@@ -45,12 +43,6 @@ autodoc_member_order = "bysource"
 
 # autosummary config
 autosummary_generate = True
-
-# recommonmark config
-source_suffix = [".rst", ".md"]
-source_parsers = {
-    ".md": "recommonmark.parser.CommonMarkParser",
-}
 
 add_module_names = False
 templates_path = ["_templates"]
