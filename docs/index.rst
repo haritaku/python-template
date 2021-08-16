@@ -1,19 +1,11 @@
 Welcome to python template's documentation!
-===============================
+===========================================
 
 .. toctree::
+   :maxdepth: 2
 
    README.md
-
-API
-===
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   src
-
+   api
 
 
 Indices and tables
