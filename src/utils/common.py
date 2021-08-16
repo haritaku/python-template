@@ -30,6 +30,8 @@ def set_log():
     """
     fpath_log_cfg = ROOT_PATH / "logging_cfg.yml"
     caller_stem = Path(inspect.stack()[1].filename).stem
+    log_dpath = LOGS_PATH / caller_stem
+    log_dpath.mkdir(exist_ok=True)
     git_hash = (
         subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
         .decode()
@@ -37,7 +39,7 @@ def set_log():
     )
 
     log_cfgs = load_yaml(fpath_log_cfg)
-    log_cfgs["handlers"]["TimedRotatingFileHandler"]["filename"] = LOGS_PATH / (
+    log_cfgs["handlers"]["TimedRotatingFileHandler"]["filename"] = log_dpath / (
         caller_stem + ".log"
     )
     log_cfgs["formatters"]["default_formatter"]["format"] = log_cfgs["formatters"][
