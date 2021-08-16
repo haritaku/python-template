@@ -28,12 +28,12 @@ root:
     - TimedRotatingFileHandler
     - StreamHandler
 
-loggers:
-  # tmp: # デフォルト(root)の設定を使わない場合の指定
-  #   level: DEBUG
-  #   handlers:
-  #     - TimedRotatingFileHandler
-  #     - StreamHandler
-  #   propagate: False
+# loggers:
+#   tmp: # デフォルト(root)の設定を使わない場合の指定
+#     level: DEBUG
+#     handlers:
+#       - TimedRotatingFileHandler
+#       - StreamHandler
+#     propagate: False
 
 disable_existing_loggers: False
