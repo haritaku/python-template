@@ -1,5 +1,6 @@
 import inspect
 import logging.config
+import subprocess
 from pathlib import Path
 
 from src import LOGS_PATH, ROOT_PATH
@@ -29,8 +30,18 @@ def set_log():
     """
     fpath_log_cfg = ROOT_PATH / "logging_cfg.yml"
     caller_stem = Path(inspect.stack()[1].filename).stem
+    git_hash = (
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+        .decode()
+        .strip()
+    )
+
     log_cfgs = load_yaml(fpath_log_cfg)
     log_cfgs["handlers"]["TimedRotatingFileHandler"]["filename"] = LOGS_PATH / (
         caller_stem + ".log"
     )
+    log_cfgs["formatters"]["default_formatter"]["format"] = log_cfgs["formatters"][
+        "default_formatter"
+    ]["format"].format(git_hash)
+
     logging.config.dictConfig(log_cfgs)
