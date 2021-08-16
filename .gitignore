@@ -69,8 +69,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/*
-!/docs/_build/.gitkeep
+docs/_build
 docs/_autosummary/*
 !/docs/_autosummary/.gitkeep
 
