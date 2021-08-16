@@ -36,7 +36,7 @@ reStructuredTextのディレクティブの記述は、MySTでは以下のよう
     ```reStructuredText
     .. directivename:: arguments
     :key1: val1
-    :key2: val2
+    :key2: val2  <- 下に空行を入れることに注意する。
 
     This is
     directive content
@@ -57,6 +57,7 @@ reStructuredTextのディレクティブの記述は、MySTでは以下のよう
 ### Docstring Tips
 記述方法は[GoogleスタイルのPython Docstringの入門](https://qiita.com/11ohina017/items/118b3b42b612e527dc1d)を参考にする。
 
+- 基本的にはreStructuredTextでの記述方法と同じ。
 - Docstring内で使えるセクションは[Docstring Section](https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html#docstring-sections)を参考にする。
 - 改行は`<br>`ではなく、`\n`を使う。
 - 数式を記述するときはディレクティブを使って記述する。`\`は2回重ねることに注意する。

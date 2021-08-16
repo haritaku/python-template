@@ -35,6 +35,7 @@ todo_include_todos = True
 # napoleon config
 napoleon_numpy_docstring = False
 napoleon_use_ivar = True
+napoleon_use_admonition_for_examples = True
 napoleon_use_admonition_for_notes = True
 napoleon_custom_sections = [("Returns", "params_style")]
 
