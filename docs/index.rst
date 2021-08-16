@@ -1,4 +1,4 @@
-Welcome to src's documentation!
+Welcome to python template's documentation!
 ===============================
 
 .. toctree::

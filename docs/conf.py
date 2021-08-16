@@ -1,6 +1,6 @@
 # -- Project information -----------------------------------------------------
 
-project = ""
+project = "python template"
 copyright = "2021, haritaku"
 author = "haritaku"
 
