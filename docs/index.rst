@@ -6,6 +6,9 @@
 Welcome to src's documentation!
 ===============================
 
+.. toctree::
+
+   README.md
 
 API
 ===

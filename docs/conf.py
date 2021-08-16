@@ -57,7 +57,7 @@ add_module_names = False
 templates_path = ["_templates"]
 language = "en"
 
-exclude_patterns = ["README.md", "**.ipynb_checkpoints"]
+exclude_patterns = ["**.ipynb_checkpoints"]
 
 # -- Options for HTML output -------------------------------------------------
 
