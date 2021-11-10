@@ -16,7 +16,7 @@ jobs:
       - name: Slack
         run: |
           url=${HTML_URL}/_compare/$(git rev-parse HEAD^)...$(git rev-parse HEAD)
-          curl -XPOST "${WEBHOOK_URL}" \ 
+          curl -X POST \ 
           -H 'Content-type: application/json' \
           --data @- <<EOS
           {
@@ -41,6 +41,7 @@ jobs:
             ]
           }
           EOS
+          ${WEBHOOK_URL}
         env:
           AUTHOER_NAME: ${{ github.actor }}
           AUTHOER_ICON: ${{ github.event.sender.avatar_url }}
