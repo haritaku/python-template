@@ -16,7 +16,6 @@ jobs:
             [
               {
                 "color": "good",
-                "title": "${{ env.ACTION }}"
                 "author_name": "${{ env.AUTHOER_NAME }}",
                 "author_icon": "${{ env.AUTHOER_ICON}}",
                 "fields": [
