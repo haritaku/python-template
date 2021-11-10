@@ -16,11 +16,29 @@ jobs:
       - name: Slack
         run: |
           url=${HTML_URL}/_compare/$(git rev-parse HEAD^)...$(git rev-parse HEAD)
-          curl -X POST ${WEBHOOK_URL} \ 
+          curl -X POST ${WEBHOOK_URL} \
           -H 'Content-type: application/json' \
           --data @- <<EOS
           {
-            "text": "abc"
+            "attachments": [
+              {
+                "color": "#03AF7A",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "Wiki Editier by name.\n\n *Changed Wiki Page*\n Home\n\n *URL*\n http://\n\n *Revision*\n http://"
+                    },
+                    "accessory": {
+                      "type": "image",
+                      "image_url": "https://avatars.githubusercontent.com/u/34964162?v=4",
+                      "alt_text": "icon"
+                    }
+                  }
+                ]
+              }
+            ]
           }
           EOS
         env:
