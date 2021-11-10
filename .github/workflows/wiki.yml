@@ -9,12 +9,40 @@ jobs:
 
     steps:
       - name: Slack
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data "{\"text\": \"Wiki ${ACTION}: ${TITLE}\n${URL}\"}" \
-            ${WEBHOOK_URL}
+        with:
+          text: Wiki ${ACTION}.
+          attachments: |
+            [
+              {
+                "color": "good",
+                "author_name": "${AUTHOER_NAME}",
+                "author_icon": "${AUTHOER_ICON}",
+                "fields": [
+                  {
+                    "title": "Wiki Page",
+                    "value": "${TITLE}"
+                  },
+                  {
+                    "title": "Edited URL",
+                    "value": "${URL}"
+                  },
+                  {
+                    "title": "GitHub Actions URL",
+                    "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
+                  }
+                ]
+              }
+            ]
+
+        # run: |
+        #   curl -X POST -H 'Content-type: application/json' \
+        #     --data "{\"text\": \"Wiki ${ACTION}: ${TITLE}\n${URL}\"}" \
+        #     ${WEBHOOK_URL}
         env:
           ACTION: ${{ github.event.pages[0].action }}
           TITLE: ${{ github.event.pages[0].title }}
           URL: ${{ github.event.pages[0].html_url }}
           WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          AUTHOER_NAME: ${{ github.actor }}
+          AUTHOER_ICON: ${{ github.event.sender.avatar_url }}
+          
