@@ -1,0 +1,20 @@
+name: Wiki
+
+on:
+  gollum
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data "{\"text\": \"Wiki ${ACTION}: ${TITLE}\n${URL}\"}" \
+            ${WEBHOOK_URL}
+        env:
+          ACTION: ${{ github.event.pages[0].action }}
+          TITLE: ${{ github.event.pages[0].title }}
+          URL: ${{ github.event.pages[0].html_url }}
+          WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
