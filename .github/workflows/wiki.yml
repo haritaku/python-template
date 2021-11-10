@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - name: Slack
+        uses: tokorom/action-slack-incoming-webhook@main
         with:
           text: Wiki ${ACTION}.
           attachments: |
