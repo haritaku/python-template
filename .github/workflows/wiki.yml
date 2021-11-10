@@ -11,21 +11,21 @@ jobs:
       - name: Slack
         uses: tokorom/action-slack-incoming-webhook@main
         with:
-          text: Wiki ${ACTION}.
+          text: Wiki ${{ env.ACTION }}.
           attachments: |
             [
               {
                 "color": "good",
-                "author_name": "${AUTHOER_NAME}",
-                "author_icon": "${AUTHOER_ICON}",
+                "author_name": "${{ env.AUTHOER_NAME }}",
+                "author_icon": "${{ env.AUTHOER_ICON}}",
                 "fields": [
                   {
                     "title": "Wiki Page",
-                    "value": "${TITLE}"
+                    "value": "${{ env.TITLE }}"
                   },
                   {
                     "title": "Edited URL",
-                    "value": "${URL}"
+                    "value": "${{ env.URL }}"
                   },
                   {
                     "title": "GitHub Actions URL",
