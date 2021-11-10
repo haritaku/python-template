@@ -43,7 +43,7 @@ jobs:
           ACTION: ${{ github.event.pages[0].action }}
           TITLE: ${{ github.event.pages[0].title }}
           URL: ${{ github.event.pages[0].html_url }}
-          WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
           AUTHOER_NAME: ${{ github.actor }}
           AUTHOER_ICON: ${{ github.event.sender.avatar_url }}
           
