@@ -24,31 +24,16 @@ jobs:
                     "value": "${{ env.TITLE }}"
                   },
                   {
-                    "title": "Edited URL",
+                    "title": "URL",
                     "value": "${{ env.URL }}"
-                  },
-                  {
-                    "title": "SHA",
-                    "value": "${{ env.SHA }}"
-                  },
-                  {
-                    "title": "GitHub Actions URL",
-                    "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
                   }
                 ]
               }
             ]
-
-        # run: |
-        #   curl -X POST -H 'Content-type: application/json' \
-        #     --data "{\"text\": \"Wiki ${ACTION}: ${TITLE}\n${URL}\"}" \
-        #     ${WEBHOOK_URL}
         env:
+          AUTHOER_NAME: ${{ github.actor }}
+          AUTHOER_ICON: ${{ github.event.sender.avatar_url }}
           ACTION: ${{ github.event.pages[0].action }}
           TITLE: ${{ github.event.pages[0].title }}
           URL: ${{ github.event.pages[0].html_url }}
-          SHA: ${{ github.event.pages[0].sha }}
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-          AUTHOER_NAME: ${{ github.actor }}
-          AUTHOER_ICON: ${{ github.event.sender.avatar_url }}
-          
