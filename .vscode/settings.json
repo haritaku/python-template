@@ -8,20 +8,23 @@
     "python.linting.flake8Path": ".venv/bin/flake8",
     "python.linting.flake8Args": [
         "--max-line-length=120",
-        "--ignore=E203,E501,W503,W504"
+        "--ignore=E203",  // Whitespace before ':'
+        "--ignore=E501",  // Line too long (82 > 79 characters)
+        "--ignore=W503",  // Line break occurred before a binary operator
+        "--ignore=W504",  // Line break occurred after a binary operator
     ],
     "python.formatting.provider": "black",
     "python.formatting.blackPath": ".venv/bin/black",
+    "python.formatting.blackArgs": [
+        "--line-length=120"
+    ],
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": false,
-    "restructuredtext.builtDocumentationPath": "${workspaceRoot}/docs/_build/html",
-    "restructuredtext.confPath": "${workspaceFolder}/docs",
     "markdownlint.config": {
-        "MD022": false,
-        "MD031": false,
-        "MD032": false,
-        "MD033": false,
-        "MD040": false
+        "MD022": false,  // Headings should be surrounded by blank lines
+        "MD031": false,  // Fenced code blocks should be surrounded by blank lines
+        "MD032": false,  // Lists should be surrounded by blank lines
+        "MD033": false,  // Inline HTML
+        "MD040": false,  // Fenced code blocks should have a language specified
     }
 }
