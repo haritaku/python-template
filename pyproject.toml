@@ -31,6 +31,8 @@ pytest-cov = "^3.0.0"
 flake8-bugbear = "^22.1.11"
 flake8-docstrings = "^1.6.0"
 darglint = "^1.8.1"
+pyupgrade = "^2.31.0"
+Pygments = "^2.11.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
