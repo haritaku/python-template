@@ -3,6 +3,8 @@
         "source.organizeImports": true
     },
     "editor.formatOnSave": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
     "autoDocstring.docstringFormat": "google",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": ".venv/bin/pflake8",
@@ -16,5 +18,5 @@
         "MD032": false,  // Lists should be surrounded by blank lines
         "MD033": false,  // Inline HTML
         "MD040": false,  // Fenced code blocks should have a language specified
-    }
+    },
 }
