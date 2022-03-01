@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "ryu1kn.partial-diff",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one",
+    "mrmlnc.vscode-remark",
+    "davidanson.vscode-markdownlint",
+    "lextudio.restructuredtext",
+    "trond-snekvik.simple-rst",
+    "bungcip.better-toml",
+    "redhat.vscode-yaml",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter-renderers",
+    "njpwerner.autodocstring",
+  ]
+}
