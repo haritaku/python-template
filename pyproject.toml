@@ -28,6 +28,9 @@ isort = "^5.9.3"
 jupyterlab-code-formatter = "^1.4.10"
 pyproject-flake8 = "^0.0.1-alpha.2"
 pytest-cov = "^3.0.0"
+flake8-bugbear = "^22.1.11"
+flake8-docstrings = "^1.6.0"
+darglint = "^1.8.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -37,12 +40,23 @@ build-backend = "poetry.core.masonry.api"
 line-length = 120
 
 [tool.flake8]
+select = "B, B9, C, D, DAR, E, F, W"
+# B, B9: bugbear
+# C: mccabe
+# D: flake8-docstrings
+# DAR: darglint
+# F: pyflakes
+# W and E: pycodestyle warnings and error
 max-line-length = 120
-extend-ignore = "E203, E501, W503, W504"
+max-complexity = 20
+docstring-convention = "google"
+strictness = "long"
+per-file-ignores = "tests/*:D, DAR"
+ignore = "E203, E501, E722, W503"
 # E203: Whitespace before ':'
 # E501: Line too long (82 > 79 characters)
+# E722: Do not use bare except'
 # W503: Line break occurred before a binary operator
-# W504: Line break occurred after a binary operator
 
 [tool.isort]
 line_length = 120
