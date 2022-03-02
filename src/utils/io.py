@@ -27,7 +27,7 @@ def load_json(fpath: Path, encoding: str = ENCODING) -> dict:
         encoding: エンコーディング。デフォルトはutf-8。
 
     Returns:
-        json_dict: 読み込んだdict形式の変数
+        dict: 読み込んだdict形式の変数
     """
     with open(fpath, "r", encoding=encoding) as f:
         json_dict = json.load(f)
@@ -54,7 +54,7 @@ def load_yaml(fpath: Path, encoding: str = ENCODING) -> dict:
         encoding: エンコーディング。デフォルトはutf-8。
 
     Returns:
-        yaml_dict: 読み込んだdict形式の変数。
+        dict: 読み込んだdict形式の変数。
     """
     with open(fpath, "r", encoding=encoding) as f:
         yaml_dict = yaml.load(f, Loader=yaml.SafeLoader)
@@ -87,7 +87,7 @@ def load_pickle(fpath: Path, encoding: str = ENCODING) -> Any:
         encoding: エンコーディング。デフォルトはutf-8。
 
     Returns:
-        data: 読み込んだ変数。
+        Any: 読み込んだ変数。
     """
     with open(fpath, "rb", encoding=encoding) as f:
         data = pickle.load(f)
