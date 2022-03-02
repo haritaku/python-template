@@ -15,6 +15,7 @@ extensions = [
     "sphinx.ext.viewcode",  # https://www.sphinx-doc.org/ja/master/usage/extensions/viewcode.html
     "sphinx.ext.autosummary",  # https://www.sphinx-doc.org/ja/master/usage/extensions/autosummary.html
     "sphinx.ext.mathjax",  # https://www.sphinx-doc.org/ja/master/usage/extensions/math.html#module-sphinx.ext.mathjax
+    "sphinx.ext.githubpages",  # https://www.sphinx-doc.org/ja/master/usage/extensions/githubpages.html
     "sphinxcontrib.katex",  # https://sphinxcontrib-katex.readthedocs.io/en/latest/
     "nbsphinx",  # https://nbsphinx.readthedocs.io/en/latest/
     "myst_parser",  # https://myst-parser.readthedocs.io/en/latest/index.html
