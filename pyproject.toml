@@ -54,10 +54,11 @@ max-complexity = 20
 docstring-convention = "google"
 strictness = "long"
 per-file-ignores = "tests/*:D, DAR"
-ignore = "E203, E501, E722, W503"
+ignore = "E203, E501, E722, D415, W503"
 # E203: Whitespace before ':'
 # E501: Line too long (82 > 79 characters)
 # E722: Do not use bare except'
+# D415: First line should end with a period, question mark, or exclamation point
 # W503: Line break occurred before a binary operator
 
 [tool.isort]
