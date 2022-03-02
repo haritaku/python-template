@@ -22,7 +22,7 @@ jobs:
       - name: Build pages
         run: |
           poetry install
-          poetry shell
+          source .venv/bin/activate
           cd docs
           make html
       - name: Deploy to GitHub Pages
