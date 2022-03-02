@@ -47,7 +47,7 @@
     ```
 
   - MySTでの記述
-    ````markdown
+    ````
     ```{directivename} arguments
     ---
     key1: val1
@@ -62,21 +62,46 @@
 
   - `$$`による記述。[参考](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#dollar-delimited-math)。
 
+    $
+    e = mc^2
+    $
+
     ```markdown
     $$
     e = mc^2
     $$
     ```
 
-  - `math`による記述
-    ````markdown
+  - `math`による記述。
+
     ```{math}
-    \begin{gather*}
+    \begin{align}
         a_1=b_1+c_1 \\
         a_2=b_2+c_2-d_2+e_2
-    \end{gather*}
+    \end{align}
+    ```
+
+    ````
+    ```{math}
+    \begin{align}
+        a_1=b_1+c_1 \\
+        a_2=b_2+c_2-d_2+e_2
+    \end{align}
     ```
     ````
+
+- MySTで対応していないディレクティブは、以下のように`eval-rst`を利用する。
+
+  ````
+  ```{eval-rst}
+  .. autosummary::
+      :toctree: _autosummary
+      :template: custom-module-template.rst
+      :recursive:
+
+      src
+  ```
+  ````
 
 ## Docstring Tips
 
