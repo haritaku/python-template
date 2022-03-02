@@ -6,6 +6,7 @@
     "yzhang.markdown-all-in-one",
     "mrmlnc.vscode-remark",
     "davidanson.vscode-markdownlint",
+    "executablebookproject.myst-highlight",
     "trond-snekvik.simple-rst",
     "bungcip.better-toml",
     "redhat.vscode-yaml",
