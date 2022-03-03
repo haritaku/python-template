@@ -9,25 +9,42 @@ on:
       - docs/**
 
 jobs:
-  build:
+  deploy_github_pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-python@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        id: setup-python
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.8
-      - name: Install Poetry
+          python-version: 3.9
+
+      - name: Install poetry
         uses: snok/install-poetry@v1
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true
-      - name: Build pages
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install library
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install
+
+      - name: Build docs
         run: |
-          poetry install
           source .venv/bin/activate
           cd docs
           make html
+
       - name: Deploy to GitHub Pages
         uses: maxheld83/ghpages@v0.2.1
         env:
