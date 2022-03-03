@@ -6,5 +6,5 @@ def is_even(x: int) -> bool:
 
 
 def test_is_even():
-    assert is_even(1) is False
+    assert is_even(2) is False
     assert is_even(2) is True
