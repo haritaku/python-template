@@ -1,12 +1,9 @@
-# -- Project information -----------------------------------------------------
-
+# Project information
 project = "python template"
 copyright = "2021, haritaku"
 author = "haritaku"
 
-
-# -- General configuration ---------------------------------------------------
-# Built-in extensions: https://www.sphinx-doc.org/ja/master/usage/extensions/index.html
+# General configuration
 extensions = [
     "sphinx.ext.autodoc",  # https://www.sphinx-doc.org/ja/master/usage/extensions/autodoc.html
     "sphinx.ext.intersphinx",  # https://www.sphinx-doc.org/ja/master/usage/extensions/intersphinx.html
@@ -20,7 +17,6 @@ extensions = [
     "nbsphinx",  # https://nbsphinx.readthedocs.io/en/latest/
     "myst_parser",  # https://myst-parser.readthedocs.io/en/latest/index.html
 ]
-
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
     "numpy": ("https://numpy.org/doc/stable", None),
@@ -30,24 +26,24 @@ intersphinx_mapping = {
     "sphinx": ("https://www.sphinx-doc.org/en/master/", None),
 }
 
-# todo config
+# Todo configuration
 todo_include_todos = True
 
-# napoleon config
+# Napoleon configuration
 napoleon_numpy_docstring = False
 napoleon_use_ivar = True
 napoleon_use_admonition_for_examples = True
 napoleon_use_admonition_for_notes = True
 napoleon_custom_sections = [("Returns", "params_style")]
 
-# type hints config
+# Type hints configuration
 autodoc_typehints = "description"
 autodoc_member_order = "bysource"
 
-# autosummary config
+# Autosummary configuration
 autosummary_generate = True
 
-# MyST config
+# MyST configuration
 myst_enable_extensions = [
     "deflist",  # 定義リストの作成を可能にする
     "dollarmath",  # `$`での数式記述を可能にする
@@ -55,17 +51,13 @@ myst_enable_extensions = [
     "tasklist",  # `- [ ]`の記述を可能にする
 ]
 
+# Other configuration
 add_module_names = False
 templates_path = ["_templates"]
 language = "en"
-
 exclude_patterns = ["**.ipynb_checkpoints"]
 
-# -- Options for HTML output -------------------------------------------------
-
+# Options for HTML output
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {"style_nav_header_background": "#03AF7A"}
-
 html_static_path = ["_static"]
-
-# html_css_files = ['custom.css']
