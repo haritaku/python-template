@@ -1,7 +1,9 @@
 name: Setup environment
+description: setup python and python libraries
 inputs:
   python-version:
-    default: 3.9
+    description: python version
+    default: "3.9"
     required: false
 runs:
   using: composite
@@ -27,5 +29,8 @@ runs:
         key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
     - name: Install library
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install
+      shell: bash
+      run: |
+        if ${{ steps.cached-poetry-dependencies.outputs.cache-hit }} != 'true' ; then
+          poetry install
+        fi
