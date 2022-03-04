@@ -8,6 +8,8 @@ on:
       - src/**
       - docs/**
       - tests/**
+      - .github/actions/**
+      - .github/workflows/**
 
 jobs:
   deploy_github_pages:
@@ -16,29 +18,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
-        id: setup-python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: Install poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Install library
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install
+      - name: Setup environment
+        uses: ./.github/actions/setup_env
 
       - name: Build docs
         run: |
@@ -58,29 +39,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
-        id: setup-python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: Install poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Install library
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install
+      - name: Setup environment
+        uses: ./.github/actions/setup_env
 
       - name: Execute pytest
         run: |
