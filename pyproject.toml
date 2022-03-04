@@ -33,6 +33,7 @@ sphinxcontrib-katex = "^0.8.6"
 jupyter-sphinx = "^0.3.2"
 nbsphinx = "^0.8.7"
 myst-parser = "0.15.1"
+pre-commit = "^2.17.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
