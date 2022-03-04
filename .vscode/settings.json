@@ -19,4 +19,7 @@
         "MD033": false,  // Inline HTML
         "MD040": false,  // Fenced code blocks should have a language specified
     },
+    "[yaml]": {
+        "editor.tabSize": 2
+    }
 }
