@@ -44,13 +44,13 @@ line-length = 120
 
 [tool.flake8]
 select = "B, B9, C, D, DAR, E, F, W"
-format = "%(path)s: L%(row)d: [%(code)s] %(text)s"
 # B, B9: bugbear
 # C: mccabe
 # D: flake8-docstrings
 # DAR: darglint
 # F: pyflakes
 # W and E: pycodestyle warnings and error
+format = "%(path)s: L%(row)d: [%(code)s] %(text)s"
 max-line-length = 120
 max-complexity = 20
 docstring-convention = "google"
