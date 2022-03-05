@@ -20,6 +20,13 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/setup_env
 
+      # TODO: move action.yml.
+      - name: Make .venv if it doesn't exist
+        run: |
+          if [ ! -d .venv ]; then
+            poetry install
+          fi
+
       - name: Build docs
         run: |
           source .venv/bin/activate
