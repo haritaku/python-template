@@ -4,5 +4,5 @@ repos:
       - id: flake8
         name: flake8
         language: python
-        entry: poetry run flake8
-        types: [python]
+        entry: poetry run pflake8
+        types: [file, python]
