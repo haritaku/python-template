@@ -33,6 +33,6 @@ runs:
     - name: Install library
       shell: bash
       run: |
-        if [[ "${{ steps.cached-poetry-dependencies.outputs.cache-hit }}" != 'true']]; then
+        if '${{ steps.cached-poetry-dependencies.outputs.cache-hit }}' != 'true' ; then
           poetry install
         fi
