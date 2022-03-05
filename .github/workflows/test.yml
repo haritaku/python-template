@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+      - tests/**
+      - .github/actions/setup_env/action.yml
+      - .github/workflows/test.yml
+
+jobs:  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/setup_env
+
+      - name: Execute pytest
+        run: |
+          source .venv/bin/activate
+          pytest

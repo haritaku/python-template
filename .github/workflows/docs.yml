@@ -1,4 +1,4 @@
-name: Deploy docs and test
+name: Build and deploy docs
 
 on:
   push:
@@ -7,9 +7,8 @@ on:
     paths:
       - src/**
       - docs/**
-      - tests/**
-      - .github/actions/**
-      - .github/workflows/**
+      - .github/actions/setup_env/action.yml
+      - .github/workflows/docs.yml
 
 jobs:
   deploy_github_pages:
@@ -32,17 +31,3 @@ jobs:
         env:
           BUILD_DIR: docs/build/html
           GH_PAT: ${{ secrets.GH_PAT }}
-  
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup environment
-        uses: ./.github/actions/setup_env
-
-      - name: Execute pytest
-        run: |
-          source .venv/bin/activate
-          pytest
