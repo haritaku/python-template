@@ -10,6 +10,9 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Setup Python
       id: setup-python
       uses: actions/setup-python@v2
@@ -29,3 +32,10 @@ runs:
       with:
         path: .venv
         key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+    
+    - name: Install library
+      shell: bash
+      run: |
+        if '${{ steps.cached-poetry-dependencies.outputs.cache-hit }}' != 'true' ; then
+          poetry install
+        fi
