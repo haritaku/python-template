@@ -14,7 +14,7 @@ PyYAML = "^5.4.1"
 
 [tool.poetry.dev-dependencies]
 jupyterlab = "^3.0.16"
-flake8 = "^3.9.2"
+flake8 = "^4.0.1"
 pytest = "^6.2.4"
 black = "^21.6b0"
 isort = "^5.9.3"
@@ -44,6 +44,7 @@ line-length = 120
 
 [tool.flake8]
 select = "B, B9, C, D, DAR, E, F, W"
+format = "%(path)s: L%(row)d: [%(code)s] %(text)s"
 # B, B9: bugbear
 # C: mccabe
 # D: flake8-docstrings
