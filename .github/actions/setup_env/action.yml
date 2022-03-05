@@ -37,5 +37,5 @@ runs:
       shell: bash
       run: |
         if '${{ steps.cached-poetry-dependencies.outputs.cache-hit }}' != 'true' ; then
-          poetry install
+          ls
         fi
