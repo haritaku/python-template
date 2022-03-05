@@ -19,6 +19,12 @@ jobs:
 
       - name: Setup environment
         uses: ./.github/actions/setup_env
+      
+      - name: Make .venv if it doesn't exist
+        run: |
+          if [ ! -d .venv ]; then
+            poetry install
+          fi 
 
       - name: Execute pytest
         run: |
