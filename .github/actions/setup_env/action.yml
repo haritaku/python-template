@@ -10,7 +10,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout repository
+    - name: Checkout self repository
       uses: actions/checkout@v3
 
     - name: Setup Python
