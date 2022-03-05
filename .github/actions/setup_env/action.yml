@@ -34,7 +34,6 @@ runs:
         key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
     
     - name: Install library
-      shell: bash
       run: |
         if '${{ steps.cached-poetry-dependencies.outputs.cache-hit }}' != 'true' ; then
           ls
