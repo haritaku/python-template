@@ -1,0 +1,6 @@
+src.utils.io.load\_yaml
+=======================
+
+.. currentmodule:: src.utils.io
+
+.. autofunction:: load_yaml

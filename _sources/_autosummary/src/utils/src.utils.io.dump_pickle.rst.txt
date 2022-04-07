@@ -1,0 +1,6 @@
+src.utils.io.dump\_pickle
+=========================
+
+.. currentmodule:: src.utils.io
+
+.. autofunction:: dump_pickle

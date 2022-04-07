@@ -1,0 +1,6 @@
+src.utils.common.set\_log
+=========================
+
+.. currentmodule:: src.utils.common
+
+.. autofunction:: set_log

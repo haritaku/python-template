@@ -1,0 +1,6 @@
+src.utils.io.dump\_yaml
+=======================
+
+.. currentmodule:: src.utils.io
+
+.. autofunction:: dump_yaml

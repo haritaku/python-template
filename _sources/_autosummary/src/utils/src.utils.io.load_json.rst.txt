@@ -1,0 +1,6 @@
+src.utils.io.load\_json
+=======================
+
+.. currentmodule:: src.utils.io
+
+.. autofunction:: load_json

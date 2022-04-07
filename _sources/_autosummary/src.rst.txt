@@ -1,0 +1,32 @@
+﻿src
+===
+
+.. automodule:: src
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree: src
+   :template: custom-module-template.rst
+   :recursive:
+
+   src.utils
+
