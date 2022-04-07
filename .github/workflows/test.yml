@@ -20,12 +20,12 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/setup_env
       
-      # TODO: Move to action.yml.
-      - name: Make .venv if it doesn't exist
-        run: |
-          if [ ! -d .venv ]; then
-            poetry install
-          fi 
+      # # TODO: Move to action.yml.
+      # - name: Make .venv if it doesn't exist
+      #   run: |
+      #     if [ ! -d .venv ]; then
+      #       poetry install
+      #     fi 
 
       - name: Execute pytest
         run: |
