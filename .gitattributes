@@ -1,1 +1,8 @@
 * text=auto eol=lf
+
+.* export-ignore
+tests/ export-ignore
+docs/ export-ignore
+logs/ export-ignore
+notebooks/ export-ignore
+zips/ export-ignore
